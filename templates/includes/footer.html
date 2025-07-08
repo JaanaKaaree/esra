@@ -1,0 +1,57 @@
+<!-- info section -->
+<section class="info_section layout_padding2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3 info_col">
+        <div class="info_contact">
+          <h4>
+            Address
+          </h4>
+          <div class="contact_link_box">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Pukekohe, Auckland, New Zealand
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call +64 21 2381611
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                info@esra.co.nz
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-9 info_col">
+        <div class="info_detail">
+          <h4>
+            {{ footer_title | default('Contact Us') }}
+          </h4>
+          {{ footer_content | default('
+          <p>We\'re passionate about AI and would love to connect with you. Whether you\'re seeking guidance on training the next generation of AI enthusiasts or looking to streamline your business processes with intelligent automation, our team has the expertise to help.</p>
+          <p>Have questions or ready to explore how AI can transform your operations? Reach out today and let\'s start a conversation.</p>
+          <p>Don\'t miss out on the latest AI developments! Subscribe to our free Substack newsletter to stay informed about emerging trends, practical applications, and industry insights delivered straight to your inbox.</p>
+          ') | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end info section -->
+
+<!-- footer section -->
+<section class="footer_section">
+  <div class="container">
+    <p>
+      &copy; <span id="displayYear"></span> Esra Innovate
+    </p>
+  </div>
+</section>
+<!-- footer section --> 

@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}AI for Video Creation - Esra Innovate{% endblock %}
+
+{% block content %}
+<!-- MATTR-style hero section -->
+<div class="business-services-hero">
+    {% set active_page = 'ai-for-video' %}
+    {% include "menu.html" %}
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>AI for Video Creation</h1>
+            <p>Create stunning videos with AI assistance. Learn how to use cutting-edge tools for video editing, effects, and production to bring your ideas to life with professional quality.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Services Overview -->
+<section class="solutions-overview" style="padding: 60px 0 40px 0;">
+    <div class="container">
+        <div class="section-header" style="margin-bottom: 40px;">
+            <h2>Video AI Solutions</h2>
+            <p class="section-subtitle">Transform your video production workflow with AI-powered tools that enhance creativity, efficiency, and visual quality.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; text-align: center; transition: all 0.3s ease; border: 1px solid #e9ecef;">
+                    <div class="feature-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #00bbf0, #007fa4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+                        <img src="{{ url_for('static', filename='images/aipowered-visuals-nobg.png') }}" alt="" style="width: 35px; height: 35px; object-fit: contain; filter: brightness(0) invert(1);">
+                    </div>
+                    <h5 style="color: #00204a; font-weight: 600; margin-bottom: 15px; font-size: 1.2rem;">AI Video Generation</h5>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Create videos from text prompts, generate scenes, and produce content without traditional filming equipment.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; text-align: center; transition: all 0.3s ease; border: 1px solid #e9ecef;">
+                    <div class="feature-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #00bbf0, #007fa4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+                        <img src="{{ url_for('static', filename='images/ai_power_video.png') }}" alt="" style="width: 35px; height: 35px; object-fit: contain; filter: brightness(0) invert(1);">
+                    </div>
+                    <h5 style="color: #00204a; font-weight: 600; margin-bottom: 15px; font-size: 1.2rem;">Smart Editing</h5>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Automated video editing, scene detection, and intelligent trimming to create polished content quickly.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; text-align: center; transition: all 0.3s ease; border: 1px solid #e9ecef;">
+                    <div class="feature-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #00bbf0, #007fa4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+                        <img src="{{ url_for('static', filename='images/ai-assistant.png') }}" alt="" style="width: 35px; height: 35px; object-fit: contain; filter: brightness(0) invert(1);">
+                    </div>
+                    <h5 style="color: #00204a; font-weight: 600; margin-bottom: 15px; font-size: 1.2rem;">Visual Effects</h5>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Add professional effects, animations, and visual enhancements with AI-powered tools and filters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Services -->
+<section class="why-choose-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 60px 0;">
+    <div class="container">
+        <div class="section-header" style="margin-bottom: 40px;">
+            <h2>What You'll Learn</h2>
+            <p class="section-subtitle">Master the essential AI video tools and techniques that will revolutionize your content creation process.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="service-detail" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; border: 1px solid #e9ecef;">
+                    <h4 style="color: #00204a; margin-bottom: 20px;">🎬 AI Video Generation</h4>
+                    <ul style="color: #666; line-height: 1.8;">
+                        <li>Text-to-video creation tools</li>
+                        <li>Scene generation from descriptions</li>
+                        <li>Character and object animation</li>
+                        <li>Background and environment creation</li>
+                        <li>Style transfer and visual effects</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="service-detail" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; border: 1px solid #e9ecef;">
+                    <h4 style="color: #00204a; margin-bottom: 20px;">✂️ Intelligent Editing</h4>
+                    <ul style="color: #666; line-height: 1.8;">
+                        <li>Automated scene detection</li>
+                        <li>Smart trimming and cutting</li>
+                        <li>Content-aware editing</li>
+                        <li>Auto-generated transitions</li>
+                        <li>Pacing and rhythm optimization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="service-detail" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; border: 1px solid #e9ecef;">
+                    <h4 style="color: #00204a; margin-bottom: 20px;">🎨 Visual Enhancement</h4>
+                    <ul style="color: #666; line-height: 1.8;">
+                        <li>Color grading and correction</li>
+                        <li>Background removal and replacement</li>
+                        <li>Object tracking and manipulation</li>
+                        <li>Special effects and animations</li>
+                        <li>Resolution upscaling and enhancement</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="service-detail" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: 100%; border: 1px solid #e9ecef;">
+                    <h4 style="color: #00204a; margin-bottom: 20px;">🎵 Audio & Voice</h4>
+                    <ul style="color: #666; line-height: 1.8;">
+                        <li>AI voice generation and cloning</li>
+                        <li>Background music creation</li>
+                        <li>Sound effect generation</li>
+                        <li>Audio synchronization</li>
+                        <li>Multi-language voiceovers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" style="background: linear-gradient(135deg, #00204a 0%, #004080 100%); padding: 60px 0; color: white;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 style="margin-bottom: 20px;">Ready to Create Amazing Videos?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 0; opacity: 0.9;">Join our comprehensive AI for Video Creation training program and master the tools that are transforming the video production industry. Create professional content faster than ever before.</p>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn1">Get Started Today</a>
+                    <a href="{{ url_for('contact') }}" class="btn2">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+  {% set footer_title = 'Ready to Create Stunning Videos?' %}
+  {% set footer_content = '
+  <p>Whether you\'re a content creator, marketer, or business owner, AI video tools can dramatically improve your visual content quality and production speed.</p>
+  <p>Contact us today to learn how AI can transform your video creation process and help you stand out in the digital landscape.</p>
+  ' %}
+  {% include "includes/footer.html" %}
+{% endblock %} 

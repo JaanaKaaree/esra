@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Business Services - Esra Innovate{% endblock %}
+
+{% block content %}
+<!-- MATTR-style hero section -->
+<div class="business-services-hero">
+    {% set active_page = 'business-services' %}
+    {% include "menu.html" %}
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>AI Solutions for Business</h1>
+            <p>Transform your business with AI-powered solutions that drive growth and efficiency</p>
+        </div>
+    </div>
+</div>
+
+<!-- Solutions Overview Section -->
+<section class="solutions-overview">
+    <div class="container">
+        <div class="section-header">
+            <h2>AI Solutions for Every Business Need</h2>
+            <p class="section-subtitle">From training and strategy to implementation and ongoing support, we help businesses leverage AI effectively.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
+                                </div>
+                                <h3>AI Training & Upskilling</h3>
+                            </div>
+                            <p class="solution-description">Empower your team with the knowledge to leverage AI effectively through tailored training programs.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What's Included:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>Introduction to AI for Business</li>
+                                <li><span class="check-icon">✓</span>AI Tools for Productivity</li>
+                                <li><span class="check-icon">✓</span>Custom Workshops for Teams</li>
+                                <li><span class="check-icon">✓</span>Creative AI Tools for Content & Marketing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/ai_powered_writing.png') }}" alt="">
+                                </div>
+                                <h3>Expert AI Strategy</h3>
+                            </div>
+                            <p class="solution-description">One-on-one guidance to align AI with your business goals and create a practical implementation roadmap.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What's Included:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>Business model review</li>
+                                <li><span class="check-icon">✓</span>Opportunity identification</li>
+                                <li><span class="check-icon">✓</span>AI integration roadmap</li>
+                                <li><span class="check-icon">✓</span>Implementation planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/ai_power_video.png') }}" alt="">
+                                </div>
+                                <h3>Ongoing Support</h3>
+                            </div>
+                            <p class="solution-description">Continuous guidance and technical support as your business evolves with AI tools and workflows.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What's Included:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>Monthly support sessions</li>
+                                <li><span class="check-icon">✓</span>New tool recommendations</li>
+                                <li><span class="check-icon">✓</span>Technical troubleshooting</li>
+                                <li><span class="check-icon">✓</span>Best practice updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/ai_strategy.png') }}" alt="">
+                                </div>
+                                <h3>Workflow Implementation</h3>
+                            </div>
+                            <p class="solution-description">Turn your ideas into real, automated solutions with AI-enhanced workflows that improve efficiency.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>Examples Include:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>AI-powered customer support</li>
+                                <li><span class="check-icon">✓</span>Marketing automation</li>
+                                <li><span class="check-icon">✓</span>Internal task assistants</li>
+                                <li><span class="check-icon">✓</span>Data processing workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Esra Innovate</h2>
+            <p class="section-subtitle">Our approach combines expertise, customization, and ongoing support to ensure your AI success.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
+                    </div>
+                    <h5>Expert-Led</h5>
+                    <p>Learn from experienced AI practitioners who understand real business challenges and can guide you through implementation.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/tailor_made.png') }}" alt="">
+                    </div>
+                    <h5>Tailor-Made</h5>
+                    <p>Solutions customized to your specific industry, business size, and goals. No one-size-fits-all approach.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai-assistant.png') }}" alt="">
+                    </div>
+                    <h5>Ongoing Support</h5>
+                    <p>Continuous guidance and support as your AI journey evolves. We're here for the long term.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ready to Transform Your Business?</h2>
+            <p class="section-subtitle">Contact us to schedule a consultation and discover how our AI solutions can help you achieve your business goals.</p>
+        </div>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn1">Get Started Today</a>
+            <a href="{{ url_for('contact') }}" class="btn2">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+  {% set footer_title = 'Let\'s Discuss Your AI Journey' %}
+  {% set footer_content = '
+  <p>Our team is ready to help you navigate the world of AI and implement solutions that drive real business value.</p>
+  <p>Whether you\'re just starting with AI or looking to scale your existing implementations, we have the expertise to guide you every step of the way.</p>
+  ' %}
+  {% include "includes/footer.html" %}
+{% endblock %} 

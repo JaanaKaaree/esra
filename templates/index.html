@@ -1,0 +1,399 @@
+{% extends "base.html" %}
+
+{% block title %}Esra Innovate{% endblock %}
+
+{% block content %}
+<!-- hero area -->
+<div class="hero_area">
+	<div class="hero_bg_box">
+		<div class="bg_img_box">
+			<img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="">
+		</div>
+	</div>
+	{% set active_page = 'home' %}
+	{% include "menu.html" %}
+	
+	<!-- slider section -->
+	<section class="slider_section">
+		<div id="customCarousel1" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="detail-box">
+									<h1>
+										<a href="{{ url_for('business_services') }}" style="color: inherit; text-decoration: none;">AI for Small Business</a>
+									</h1>
+									<p>
+										Transform your business with AI-powered solutions. Learn how to automate tasks, enhance customer service, and boost productivity with our comprehensive training program.
+									</p>
+									<div class="btn-box">
+										<a href="{{ url_for('business_services') }}" class="btn1">
+											Learn More
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-box">
+									<img src="{{ url_for('static', filename='images/_smallbusiness.png') }}" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="detail-box">
+									<h1>
+										<a href="{{ url_for('ai_for_podcast') }}" style="color: inherit; text-decoration: none;">AI for Podcasters</a>
+									</h1>
+									<p>
+										Elevate your podcast with AI tools. From content creation to audio enhancement, learn how to streamline your workflow and create professional-quality content.
+									</p>
+									<div class="btn-box">
+										<a href="{{ url_for('ai_for_podcast') }}" class="btn1">
+											Learn More
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-box">
+									<img src="{{ url_for('static', filename='images/_podcast.png') }}" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="detail-box">
+									<h1>
+										<a href="{{ url_for('ai_for_video') }}" style="color: inherit; text-decoration: none;">AI for Video Creation</a>
+									</h1>
+									<p>
+										Create stunning videos with AI assistance. Learn how to use cutting-edge tools for video editing, effects, and production to bring your ideas to life.
+									</p>
+									<div class="btn-box">
+										<a href="{{ url_for('ai_for_video') }}" class="btn1">
+											Learn More
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-box">
+									<img src="{{ url_for('static', filename='images/_invideo.png') }}" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ol class="carousel-indicators">
+				<li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+				<li data-target="#customCarousel1" data-slide-to="1"></li>
+				<li data-target="#customCarousel1" data-slide-to="2"></li>
+			</ol>
+		</div>
+	</section>
+	<!-- end slider section -->
+</div>
+<!-- end hero area -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Empowering Creativity  <span>with AI Tools</span>
+          </h2>
+          <p>
+			Explore the power of AI through a curated set of tools that enhance your creative process. From generating compelling visuals to refining written content, producing engaging videos, and organizing ideas seamlessly - these tools are designed to inspire and streamline the creative journey for learners of all ages          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/aipowered-visuals-nobg.png') }}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  AI-Powered Visuals
+                </h5>
+                <p>
+                  Create stunning images and graphics with AI. Generate unique artwork, enhance photos, and bring creative ideas to life effortlessly—perfect for storytellers, designers, and young creators.
+                </p>
+                <div class="ai-tools">
+                  Midjourney | DALL·E 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/ai_powered_writing.png') }}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  AI Writing Assistant
+                </h5>
+                <p>
+                  Refine and elevate your writing. Get AI-powered suggestions for storytelling, blogs, or business content. Improve clarity, grammar, and creativity with intelligent text enhancements.
+                </p>
+                <div class="ai-tools">
+                  ChatGPT | Claude 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/ai_power_video.png') }}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  AI Video & Audio Creation
+                </h5>
+                <p>
+                  Transform ideas into engaging multimedia. Use AI to create professional-quality videos, voiceovers, and animations with ease. A game-changer for content creators and educators.
+                </p>
+                <div class="ai-tools">
+                   InVideo | Runway 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+  <!-- Our Services -->
+  <section class="team_section layout_padding">
+    <div class="container-fluid">
+      <div class="heading_container heading_center">
+        <h2 class="">
+          Our <span>Training Services</span>
+        </h2>
+        <p class="mt-3">
+          Comprehensive AI training programs designed to transform your business and enhance your skills
+        </p>
+      </div>
+
+      <div class="team_container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/idea_to_stories.png') }}" class="img1" alt="Team Member">
+              </div>
+              <div class="detail-box">
+                <h5>From Ideas to Stories</h5>
+                <p>The AI Storyteller's Workshop</p>
+              </div>
+              <div class="social_box">
+                <a href="{{ url_for('ideas_to_stories') }}" class="btn1">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/ai-assistant.png') }}" class="img1" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Bot Builder
+                </h5>
+                <p>
+                  Create Your Own AI-Powered Chatbot
+                </p>
+              </div>
+              <div class="social_box">
+                <a href="{{ url_for('bot_builder') }}" class="btn1">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/smart_business.png') }}" class="img1" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Smart Business
+                </h5>
+                <p>
+                  Streamlining Your Small Business
+                </p>
+              </div>
+              <div class="social_box">
+                <a href="{{ url_for('smart_business') }}" class="btn1">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/ai_strategy.png') }}" class="img1" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  The AI Business Playbook
+                </h5>
+                <p>
+                  Mastering AI Strategy for Business Growth
+                </p>
+              </div>
+              <div class="social_box">
+                <a href="{{ url_for('ai_business_playbook') }}" class="btn1">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="{{ url_for('training_services') }}" class="read-more-btn">
+          <span>Explore All Services</span>
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- end our services section -->
+
+  <!-- why section -->
+
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Why Choose <span>Us</span></h2>
+      </div>
+      <div class="why_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>Expert-Led AI Training for All Ages</h5>
+            <p>
+              At Esra Innovate, we offer tailored AI training from beginner to advanced levels, designed by experts who are passionate about making AI accessible. Whether you're a business owner or a young learner, our courses are structured to help you succeed in the evolving world of AI.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/ai_chat_bot.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>Practical, Real-World Applications</h5>
+            <p>
+              Our courses focus on practical, real-world applications of AI. Learn how to integrate AI into your daily business tasks or get creative with AI in storytelling. We equip you with the skills that matter most in today's tech-driven world.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/tailor_made.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>Tailored Learning Paths for Everyone</h5>
+            <p>
+              Whether you're a small business owner looking to streamline operations or a young learner exploring AI for the first time, we provide personalized learning experiences to suit your needs. Learn at your own pace with flexible courses designed just for you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- end why section -->
+
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+          About <span>Us</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/_phoneai.png') }}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <p>
+              At Esra Innovate, we believe that AI is not just for tech experts—it's for everyone. Our mission is to make AI education accessible, engaging, and practical for businesses and young learners alike. Whether you're a small business owner looking to streamline operations or a student eager to explore AI's creative possibilities, we provide the knowledge and tools to help you succeed.
+            </p>
+            <p>
+              We focus on hands-on learning with real-world applications. From automating business processes to enhancing storytelling with AI, our courses are designed to empower individuals with practical skills they can use immediately. Our expert-led training blends technology with creativity, ensuring learners gain both technical understanding and confidence in using AI.            </p>
+            <p>
+              At the heart of Esra Innovate is a passion for education and innovation. We're committed to fostering an AI-literate community where businesses can thrive, and the next generation can develop the skills they need for the future. Join us on this journey and discover how AI can transform the way you work, learn, and create.            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+
+
+
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          Stay Ahead with <span>AI Innovation</span>
+        </h2>
+      </div>
+      <div class="centered-text">
+        <p>Get insights, tools, and tips on how AI can enhance creativity, productivity, and business strategy. We use Substack, so you can easily subscribe or unsubscribe anytime!</p>
+      </div>
+
+      <div class="iframe-container">
+        <iframe src="https://esrainnovate.substack.com/embed" 
+                width="100%" height="150" 
+                style="border:1px solid #EEE; background:white;" 
+                frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+
+{% endblock %}
+
+{% block footer %}
+  {% set footer_title = 'Contact Us' %}
+  {% set footer_content = '
+  <p>We\'re passionate about AI and would love to connect with you. Whether you\'re seeking guidance on training the next generation of AI enthusiasts or looking to streamline your business processes with intelligent automation, our team has the expertise to help.</p>
+  <p>Have questions or ready to explore how AI can transform your operations? Reach out today and let\'s start a conversation.</p>
+  <p>Don\'t miss out on the latest AI developments! Subscribe to our free Substack newsletter to stay informed about emerging trends, practical applications, and industry insights delivered straight to your inbox.</p>
+  ' %}
+  {% include "includes/footer.html" %}
+{% endblock %}

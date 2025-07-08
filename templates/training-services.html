@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}Training Services - Esra Innovate{% endblock %}
+
+{% block content %}
+<!-- MATTR-style hero section -->
+<div class="business-services-hero">
+    {% set active_page = 'training-services' %}
+    {% include "menu.html" %}
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>AI Training Services</h1>
+            <p>Comprehensive training programs designed to transform your business and enhance your skills with AI</p>
+        </div>
+    </div>
+</div>
+
+<!-- Training Programs Overview Section -->
+<section class="solutions-overview">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Training Programs</h2>
+            <p class="section-subtitle">From storytelling to business strategy, our expert-led training programs equip you with practical AI skills for real-world applications.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/idea_to_stories.png') }}" alt="">
+                                </div>
+                                <h3>From Ideas to Stories</h3>
+                            </div>
+                            <p class="solution-description">The AI Storyteller's Workshop - Learn how to transform your ideas into compelling stories using AI-powered tools.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What You'll Learn:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>AI-powered story generation</li>
+                                <li><span class="check-icon">✓</span>Creative writing with AI assistance</li>
+                                <li><span class="check-icon">✓</span>Visual storytelling techniques</li>
+                                <li><span class="check-icon">✓</span>Content creation workflows</li>
+                            </ul>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="ideas-to-stories.html" class="btn1">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/ai-assistant.png') }}" alt="">
+                                </div>
+                                <h3>Bot Builder</h3>
+                            </div>
+                            <p class="solution-description">Create Your Own AI-Powered Chatbot - Build intelligent chatbots that can handle customer service and automate tasks.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What You'll Learn:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>Chatbot design principles</li>
+                                <li><span class="check-icon">✓</span>AI conversation flows</li>
+                                <li><span class="check-icon">✓</span>Integration with business systems</li>
+                                <li><span class="check-icon">✓</span>Customer service automation</li>
+                            </ul>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="bot-builder.html" class="btn1">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/smart_business.png') }}" alt="">
+                                </div>
+                                <h3>Smart Business</h3>
+                            </div>
+                            <p class="solution-description">Streamlining Your Small Business - Optimize your business operations with AI-powered tools and workflows.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What You'll Learn:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>Business process automation</li>
+                                <li><span class="check-icon">✓</span>AI tools for productivity</li>
+                                <li><span class="check-icon">✓</span>Data analysis and insights</li>
+                                <li><span class="check-icon">✓</span>Customer relationship management</li>
+                            </ul>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="smart-business.html" class="btn1">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/ai_strategy.png') }}" alt="">
+                                </div>
+                                <h3>The AI Business Playbook</h3>
+                            </div>
+                            <p class="solution-description">Mastering AI Strategy for Business Growth - Develop a comprehensive AI strategy that drives business growth and competitive advantage.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What You'll Learn:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>AI strategy development</li>
+                                <li><span class="check-icon">✓</span>Market analysis with AI</li>
+                                <li><span class="check-icon">✓</span>Competitive advantage strategies</li>
+                                <li><span class="check-icon">✓</span>ROI measurement and optimization</li>
+                            </ul>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="ai-business-playbook.html" class="btn1">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Our Training</h2>
+            <p class="section-subtitle">Our training approach combines expertise, hands-on learning, and practical application to ensure your success.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
+                    </div>
+                    <h5>Expert-Led Training</h5>
+                    <p>Learn from experienced AI practitioners who understand real business challenges and can guide you through implementation.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/tailor_made.png') }}" alt="">
+                    </div>
+                    <h5>Hands-On Learning</h5>
+                    <p>Get practical experience with real AI tools and workflows. Our training focuses on application, not just theory.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai_chat_bot.png') }}" alt="">
+                    </div>
+                    <h5>Ongoing Support</h5>
+                    <p>Receive continuous guidance and support as you implement what you've learned. We're here for your AI journey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ready to Start Your AI Journey?</h2>
+            <p class="section-subtitle">Choose the training program that best fits your goals and start transforming your skills with AI today.</p>
+        </div>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn1">Get Started Today</a>
+            <a href="{{ url_for('contact') }}" class="btn2">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+  {% set footer_title = 'Start Your AI Training Journey' %}
+  {% set footer_content = '
+  <p>Our training programs are designed to make AI accessible and practical for everyone. Whether you\'re a business owner looking to streamline operations or a creative professional wanting to enhance your storytelling, we have the right program for you.</p>
+  <p>Each program includes hands-on exercises, real-world projects, and ongoing support to ensure you can apply what you learn immediately.</p>
+  ' %}
+  {% include "includes/footer.html" %}
+{% endblock %} 

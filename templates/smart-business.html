@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}Smart Business - Streamlining Your Small Business - Esra Innovate{% endblock %}
+
+{% block content %}
+<!-- MATTR-style hero section -->
+<div class="business-services-hero">
+    {% set active_page = 'training-services' %}
+    {% include "menu.html" %}
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>Smart Business</h1>
+            <p>Streamlining Your Small Business - Optimize your business operations with AI-powered tools and workflows</p>
+        </div>
+    </div>
+</div>
+
+<!-- Program Overview Section -->
+<section class="solutions-overview">
+    <div class="container">
+        <div class="section-header">
+            <h2>Transform Your Business with AI</h2>
+            <p class="section-subtitle">Learn how to leverage AI tools to streamline operations, improve productivity, and drive growth in your small business.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="solution-icon">
+                                    <img src="{{ url_for('static', filename='images/smart_business.png') }}" alt="">
+                                </div>
+                                <h3>Program Overview</h3>
+                            </div>
+                            <p class="solution-description">This comprehensive training program is designed specifically for small business owners and managers who want to implement AI solutions to improve efficiency, reduce costs, and enhance customer experience.</p>
+                        </div>
+                        <div class="solution-features">
+                            <h5>What You'll Master:</h5>
+                            <ul>
+                                <li><span class="check-icon">✓</span>Business process automation and optimization</li>
+                                <li><span class="check-icon">✓</span>AI tools for productivity and task management</li>
+                                <li><span class="check-icon">✓</span>Data analysis and business intelligence</li>
+                                <li><span class="check-icon">✓</span>Customer relationship management with AI</li>
+                                <li><span class="check-icon">✓</span>Marketing automation and lead generation</li>
+                                <li><span class="check-icon">✓</span>Financial management and reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Modules Section -->
+<section class="why-choose-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Course Modules</h2>
+            <p class="section-subtitle">A practical curriculum focused on real business applications of AI.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai_strategy.png') }}" alt="">
+                    </div>
+                    <h5>Module 1: AI Business Assessment</h5>
+                    <p>Evaluate your current business processes and identify opportunities for AI implementation and automation.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai_powered_writing.png') }}" alt="">
+                    </div>
+                    <h5>Module 2: Productivity Tools</h5>
+                    <p>Master AI-powered productivity tools for communication, project management, and task automation.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai-assistant.png') }}" alt="">
+                    </div>
+                    <h5>Module 3: Customer Experience</h5>
+                    <p>Implement AI solutions to enhance customer service, engagement, and relationship management.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/aipowered-visuals-nobg.png') }}" alt="">
+                    </div>
+                    <h5>Module 4: Marketing & Sales</h5>
+                    <p>Leverage AI for marketing automation, lead generation, and sales process optimization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Business Benefits Section -->
+<section class="solutions-overview">
+    <div class="container">
+        <div class="section-header">
+            <h2>Business Benefits</h2>
+            <p class="section-subtitle">Discover how AI can transform your small business operations.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <h3>Increased Efficiency</h3>
+                            <p class="solution-description">Automate repetitive tasks and streamline workflows to save time and reduce operational costs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <h3>Better Customer Service</h3>
+                            <p class="solution-description">Provide faster, more personalized customer support with AI-powered tools and chatbots.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <h3>Data-Driven Decisions</h3>
+                            <p class="solution-description">Use AI analytics to gain insights into your business performance and make informed decisions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="solution-card">
+                        <div class="solution-header">
+                            <h3>Competitive Advantage</h3>
+                            <p class="solution-description">Stay ahead of the competition by implementing cutting-edge AI solutions in your business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Who Should Attend Section -->
+<section class="why-choose-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Who Should Attend</h2>
+            <p class="section-subtitle">This program is designed for small business professionals looking to modernize their operations.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/smart_business.png') }}" alt="">
+                    </div>
+                    <h5>Small Business Owners</h5>
+                    <p>Entrepreneurs looking to optimize operations and improve efficiency with AI tools.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
+                    </div>
+                    <h5>Business Managers</h5>
+                    <p>Managers responsible for improving team productivity and operational efficiency.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai-assistant.png') }}" alt="">
+                    </div>
+                    <h5>Operations Staff</h5>
+                    <p>Team members who want to learn AI tools to improve their daily work processes.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/ai_strategy.png') }}" alt="">
+                    </div>
+                    <h5>Startup Founders</h5>
+                    <p>New business owners who want to build AI-powered operations from the ground up.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ready to Smartify Your Business?</h2>
+            <p class="section-subtitle">Join our Smart Business program and transform your operations with AI-powered solutions.</p>
+        </div>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn1">Contact Us</a>
+            <a href="{{ url_for('training_services') }}" class="btn2">View All Programs</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+  {% set footer_title = 'Optimize Your Business Operations' %}
+  {% set footer_content = '
+  <p>Transform your small business with AI-powered tools and workflows that improve efficiency, reduce costs, and enhance customer experience.</p>
+  <p>Our practical training program focuses on real-world applications that you can implement immediately to see results in your business.</p>
+  ' %}
+  {% include "includes/footer.html" %}
+{% endblock %} 
