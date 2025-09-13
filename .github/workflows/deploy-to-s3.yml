@@ -1,0 +1,105 @@
+name: Deploy to S3 and CloudFront
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'output/**' ]
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+        
+    - name: Install AWS CLI
+      run: |
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
+        
+    - name: Get changed files
+      id: changed-files
+      run: |
+        # Get list of changed files in output directory
+        if [ "${{ github.event_name }}" = "push" ]; then
+          # For push events, compare with previous commit
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep "^output/" || true)
+        else
+          # For manual workflow dispatch, deploy all files
+          CHANGED_FILES=$(find output -type f | sed 's|^output/||' || true)
+        fi
+        
+        # Convert to JSON array for easier processing
+        if [ -n "$CHANGED_FILES" ]; then
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" | jq -R -s -c 'split("\n")[:-1]' >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        else
+          echo "files=[]" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "Changed files: $CHANGED_FILES"
+        
+    - name: Sync files to S3
+      if: steps.changed-files.outputs.files != '[]'
+      run: |
+        # Sync the output directory to S3 bucket
+        aws s3 sync output/ s3://${{ secrets.S3_BUCKET_NAME }} \
+          --delete \
+          --exact-timestamps \
+          --cache-control "public, max-age=31536000" \
+          --exclude "*.html" \
+          --exclude "*.xml"
+        
+        # Upload HTML and XML files with shorter cache
+        aws s3 sync output/ s3://${{ secrets.S3_BUCKET_NAME }} \
+          --exact-timestamps \
+          --cache-control "public, max-age=3600" \
+          --include "*.html" \
+          --include "*.xml"
+          
+        echo "Files synced to S3 successfully"
+        
+    - name: Create CloudFront invalidation
+      if: steps.changed-files.outputs.files != '[]'
+      run: |
+        # Get the list of changed files and create invalidation paths
+        CHANGED_FILES='${{ steps.changed-files.outputs.files }}'
+        
+        if [ "$CHANGED_FILES" != "[]" ]; then
+          # Convert JSON array to space-separated paths and add leading slash
+          PATHS=$(echo "$CHANGED_FILES" | jq -r '.[] | "/" + .' | tr '\n' ' ')
+          
+          # Add common paths that should always be invalidated
+          PATHS="/ /blog/ /blog/index.html /sitemap.xml"
+          
+          echo "Invalidating CloudFront paths: $PATHS"
+          
+          # Create CloudFront invalidation
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths $PATHS
+        else
+          echo "No files changed, skipping CloudFront invalidation"
+        fi
+        
+    - name: Deploy status
+      if: always()
+      run: |
+        if [ "${{ job.status }}" = "success" ]; then
+          echo "✅ Deployment completed successfully!"
+          echo "🌐 Website updated at: https://esra.co.nz"
+        else
+          echo "❌ Deployment failed!"
+          exit 1
+        fi
