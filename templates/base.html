@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Basic -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKZDPPNGVD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HKZDPPNGVD');
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Esra Innovate",
+      "description": "AI training and consulting for small businesses",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Auckland",
+        "addressCountry": "NZ"
+      },
+      "telephone": "+64-21-2381611",
+      "url": "https://www.esra.co.nz"
+    }
+    </script>
+  
+  <!-- Essential Meta Tags -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="">
-
+  
+  <!-- SEO Meta Tags -->
   <title>{% block title %}Esra Innovate{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% endblock %}" />
+  <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+  <meta name="author" content="{% block author %}Esra Innovate{% endblock %}" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="{% block og_title %}{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}{% endblock %}" />
+  <meta property="og:image" content="{% block og_image %}{% endblock %}" />
+  <meta property="og:url" content="{% block og_url %}{% endblock %}" />
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:site_name" content="{% block og_site_name %}Esra Innovate{% endblock %}" />
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="{% block twitter_card %}summary_large_image{% endblock %}" />
+  <meta name="twitter:title" content="{% block twitter_title %}{% endblock %}" />
+  <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}" />
+  <meta name="twitter:image" content="{% block twitter_image %}{% endblock %}" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="robots" content="{% block robots %}index, follow{% endblock %}" />
+  <meta name="language" content="{% block language %}English{% endblock %}" />
+  <meta name="geo.region" content="{% block geo_region %}{% endblock %}" />
+  <meta name="geo.placename" content="{% block geo_placename %}{% endblock %}" />
+  <link rel="canonical" href="{% block canonical %}{% endblock %}" />
+  
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="">
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />

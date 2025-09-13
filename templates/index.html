@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 
-{% block title %}Esra Innovate{% endblock %}
+{% block title %}AI Training & Consulting for Small Business NZ | Esra Innovate{% endblock %}
+
+{% block description %}Transform your business with AI training in New Zealand. Expert-led ChatGPT workshops, business automation, and AI strategy consulting for small businesses in Auckland, Wellington.{% endblock %}
+
+{% block keywords %}AI training NZ, ChatGPT training Auckland, small business AI consulting, AI workshops New Zealand, business automation training, AI strategy Wellington{% endblock %}
+
+{% block og_title %}AI Training & Consulting for Small Business NZ | Esra Innovate{% endblock %}
+
+{% block og_description %}Transform your business with AI training in New Zealand. Expert-led ChatGPT workshops and AI strategy consulting.{% endblock %}
+
+{% block og_image %}https://www.esra.co.nz/static/images/hero-bg.png{% endblock %}
+
+{% block og_url %}https://www.esra.co.nz/{% endblock %}
+
+{% block twitter_title %}AI Training & Consulting for Small Business NZ{% endblock %}
+
+{% block twitter_description %}Transform your business with AI training in New Zealand. Expert-led ChatGPT workshops and AI strategy consulting.{% endblock %}
+
+{% block twitter_image %}https://www.esra.co.nz/static/images/hero-bg.png{% endblock %}
+
+{% block geo_region %}NZ{% endblock %}
+
+{% block geo_placename %}Auckland, New Zealand{% endblock %}
+
+{% block canonical %}https://www.esra.co.nz/{% endblock %}
 
 {% block content %}
 <!-- hero area -->
@@ -112,67 +136,76 @@
   <section class="service_section layout_padding">
     <div class="service_container">
       <div class="container ">
-        <div class="heading_container heading_center">
+        <div class="heading_container heading_center" style="margin-bottom: 60px;">
           <h2>
-            Empowering Creativity  <span>with AI Tools</span>
+            Strategic <span>AI Partners</span>
           </h2>
           <p>
-			Explore the power of AI through a curated set of tools that enhance your creative process. From generating compelling visuals to refining written content, producing engaging videos, and organizing ideas seamlessly - these tools are designed to inspire and streamline the creative journey for learners of all ages          </p>
+            At Esra Innovate, we don't just preach AI - we implement it. Whether you need technical leadership, strategic planning, or process automation, our expert services transform how your business operates. From CTO-level guidance to custom AI workflows, we provide the expertise and hands-on support to make AI work for your specific goals. Ready to move beyond theory and see real results?</p>
         </div>
-        <div class="row">
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="{{ url_for('static', filename='images/aipowered-visuals-nobg.png') }}" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  AI-Powered Visuals
-                </h5>
-                <p>
-                  Create stunning images and graphics with AI. Generate unique artwork, enhance photos, and bring creative ideas to life effortlessly—perfect for storytellers, designers, and young creators.
-                </p>
-                <div class="ai-tools">
-                  Midjourney | DALL·E 
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{{ url_for('business_services') }}" class="service-link">
+              <div class="service-card">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/aipowered-visuals-nobg.png') }}" alt="Expert AI Strategy">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Expert AI Strategy
+                  </h5>
+                  <p>
+                    Develop winning AI strategies aligned with your goals. Turn AI opportunities into competitive advantages
+                  </p>
+                </div>
+                <div class="service-overlay">
+                  <span class="learn-more-btn">Learn More →</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="{{ url_for('static', filename='images/ai_powered_writing.png') }}" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  AI Writing Assistant
-                </h5>
-                <p>
-                  Refine and elevate your writing. Get AI-powered suggestions for storytelling, blogs, or business content. Improve clarity, grammar, and creativity with intelligent text enhancements.
-                </p>
-                <div class="ai-tools">
-                  ChatGPT | Claude 
+          <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{{ url_for('business_services') }}" class="service-link featured-service">
+              <div class="service-card featured-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 3px solid #00bbf0; transform: scale(1.05); box-shadow: 0 10px 30px rgba(0, 187, 240, 0.2);">
+                <div class="featured-badge">
+                  <span>Most Popular</span>
+                </div>
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/ai_powered_writing.png') }}" alt="AI Writing Assistant">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    CTO as a Service
+                  </h5>
+                  <p>
+                    Get seasoned CTO expertise without the full-time cost. Strategic technology guidance, system architecture, and leadership support for growing businesses.
+                  </p>
+                </div>
+                <div class="service-overlay">
+                  <span class="learn-more-btn">See More →</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="{{ url_for('static', filename='images/ai_power_video.png') }}" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  AI Video & Audio Creation
-                </h5>
-                <p>
-                  Transform ideas into engaging multimedia. Use AI to create professional-quality videos, voiceovers, and animations with ease. A game-changer for content creators and educators.
-                </p>
-                <div class="ai-tools">
-                   InVideo | Runway 
+          <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{{ url_for('business_services') }}" class="service-link">
+              <div class="service-card">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/ai_power_video.png') }}" alt="AI Video & Audio Creation">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Workflow Automation
+                  </h5>
+                  <p>
+                    Streamline operations with smart automation. Eliminate repetitive tasks and boost team productivity dramatically.
+                  </p>
+                </div>
+                <div class="service-overlay">
+                  <span class="learn-more-btn">Discover More →</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -284,7 +317,7 @@
       <div class="why_container">
         <div class="box">
           <div class="img-box">
-            <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
+                            <img src="{{ url_for('static', filename='images/expert_led.png') }}" alt="">
           </div>
           <div class="detail-box">
             <h5>Expert-Led AI Training for All Ages</h5>

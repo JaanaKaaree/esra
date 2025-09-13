@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Training Services - Esra Innovate{% endblock %}
+{% block title %}AI Training Programs & Workshops New Zealand | Esra Innovate{% endblock %}
+
+{% block description %}Expert-led AI training programs in NZ. Learn ChatGPT, storytelling with AI, chatbot building, and business automation. Hands-on workshops for all skill levels.{% endblock %}
+
+{% block keywords %}AI training programs NZ, ChatGPT workshops Auckland, AI storytelling course, chatbot training, business automation workshop, AI skills development{% endblock %}
+
+{% block og_title %}AI Training Programs & Workshops New Zealand{% endblock %}
+
+{% block og_description %}Expert-led AI training programs in NZ. Learn ChatGPT, storytelling with AI, and business automation.{% endblock %}
+
+{% block og_image %}https://www.esra.co.nz/static/images/expert_led.png{% endblock %}
+
+{% block og_url %}https://www.esra.co.nz/training-services.html{% endblock %}
+
+{% block canonical %}https://www.esra.co.nz/training-services.html{% endblock %}
 
 {% block content %}
 <!-- MATTR-style hero section -->
@@ -184,7 +198,7 @@
             <p class="section-subtitle">Choose the training program that best fits your goals and start transforming your skills with AI today.</p>
         </div>
         <div class="cta-buttons">
-            <a href="{{ url_for('contact') }}" class="btn1">Get Started Today</a>
+            <a href="{{ url_for('getting_started') }}" class="btn1">New to AI?</a>
             <a href="{{ url_for('contact') }}" class="btn2">Contact Us</a>
         </div>
     </div>
