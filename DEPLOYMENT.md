@@ -7,7 +7,9 @@ This repository includes an automated GitHub Actions workflow that deploys the w
 
 ### Trigger Conditions
 - **Automatic**: Triggers on pushes to `main` branch when files in `output/` directory change
-- **Manual**: Can be triggered manually via GitHub Actions UI
+- **Manual**: Can be triggered manually via GitHub Actions UI with two options:
+  - **Changed Files Only**: Deploys only files that have been modified (default)
+  - **Full Deployment**: Deploys the entire `output/` directory (useful for initial setup or major updates)
 
 ### What It Does
 1. **Detects Changes**: Identifies which files were modified in the `output/` directory
@@ -101,11 +103,25 @@ Your CloudFront distribution should:
 
 ## Manual Deployment
 
-You can trigger deployment manually:
+You can trigger deployment manually with two options:
+
+### Option 1: Changed Files Only (Default)
+- Deploys only files that have been modified since the last commit
+- Faster and more efficient for regular updates
+
+### Option 2: Full Deployment
+- Deploys the entire `output/` directory
+- Useful for initial setup, major updates, or when you want to ensure everything is synced
+- Uses `--delete` flag to remove any files in S3 that don't exist in your local output folder
+
+**Steps to run manually:**
 1. Go to **Actions** tab in GitHub
 2. Select **Deploy to S3 and CloudFront** workflow
 3. Click **Run workflow**
-4. Select branch and click **Run workflow**
+4. Select branch and choose deployment mode:
+   - **changed**: Deploy only changed files
+   - **full**: Deploy entire output directory
+5. Click **Run workflow**
 
 ## Troubleshooting
 
