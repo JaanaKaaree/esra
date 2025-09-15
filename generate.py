@@ -56,6 +56,10 @@ def ai_for_podcast():
 def ai_for_video():
     return render_template('ai-for-video.html')
 
+@app.route('/cto-as-a-service.html')
+def cto_as_a_service():
+    return render_template('cto-as-a-service.html')
+
 @app.route('/blog/ai-basics.html')
 def blog_ai_basics():
     return render_template('blog-ai-basics.html')
@@ -139,6 +143,7 @@ def generate_sitemap():
         {'url': '/ai-business-playbook.html', 'priority': '0.8', 'changefreq': 'monthly'},
         {'url': '/ai-for-video.html', 'priority': '0.8', 'changefreq': 'monthly'},
         {'url': '/ai-for-podcast.html', 'priority': '0.8', 'changefreq': 'monthly'},
+        {'url': '/cto-as-a-service.html', 'priority': '0.9', 'changefreq': 'monthly'},
         {'url': '/smart-business.html', 'priority': '0.8', 'changefreq': 'monthly'},
         {'url': '/bot-builder.html', 'priority': '0.8', 'changefreq': 'monthly'},
         {'url': '/ideas-to-stories.html', 'priority': '0.8', 'changefreq': 'monthly'},
@@ -415,6 +420,10 @@ def generate_main_pages():
     def temp_ai_for_video():
         return render_template('ai-for-video.html')
     
+    @temp_app.route('/cto-as-a-service.html')
+    def temp_cto_as_a_service():
+        return render_template('cto-as-a-service.html')
+    
     temp_freezer = Freezer(temp_app)
     temp_freezer.freeze()
     print("All main pages generated successfully!")
@@ -431,6 +440,76 @@ def generate_whole_website():
     generate_sitemap()
     print("Complete website generation finished!")
 
+def generate_specific_page(page_name):
+    """Generate a specific page by name without deleting other files
+    
+    Args:
+        page_name (str): The page name (e.g., 'cto-as-a-service', 'ai-business-playbook', 'blog-ai-basics')
+    """
+    print(f"Generating specific page: {page_name}")
+    
+    # Define page mappings
+    page_mappings = {
+        'cto-as-a-service': {'route': '/cto-as-a-service.html', 'template': 'cto-as-a-service.html'},
+        'ai-business-playbook': {'route': '/ai-business-playbook.html', 'template': 'ai-business-playbook.html'},
+        'ai-for-video': {'route': '/ai-for-video.html', 'template': 'ai-for-video.html'},
+        'ai-for-podcast': {'route': '/ai-for-podcast.html', 'template': 'ai-for-podcast.html'},
+        'smart-business': {'route': '/smart-business.html', 'template': 'smart-business.html'},
+        'bot-builder': {'route': '/bot-builder.html', 'template': 'bot-builder.html'},
+        'ideas-to-stories': {'route': '/ideas-to-stories.html', 'template': 'ideas-to-stories.html'},
+        'training-services': {'route': '/training-services.html', 'template': 'training-services.html'},
+        'getting-started': {'route': '/getting-started.html', 'template': 'getting-started.html'},
+        'business-services': {'route': '/business-services.html', 'template': 'business-services.html'},
+        'contact': {'route': '/contact.html', 'template': 'contact.html'},
+        'test-contact': {'route': '/test-contact.html', 'template': 'test-contact.html'},
+        'index': {'route': '/', 'template': 'index.html'},
+    }
+    
+    # Handle blog pages
+    if page_name.startswith('blog-'):
+        route_path = f'/blog/{page_name.replace("blog-", "")}.html'
+        template_name = f'{page_name}.html'
+    elif page_name in page_mappings:
+        route_path = page_mappings[page_name]['route']
+        template_name = page_mappings[page_name]['template']
+    else:
+        print(f"Error: Unknown page name '{page_name}'")
+        print("Available pages:")
+        for key in page_mappings.keys():
+            print(f"  - {key}")
+        print("For blog pages, use format: blog-{name}")
+        return
+    
+    # Use the main app with proper configuration
+    app.config['SERVER_NAME'] = 'localhost'
+    app.config['APPLICATION_ROOT'] = '/'
+    app.config['PREFERRED_URL_SCHEME'] = 'http'
+    
+    # Create application context and render the template
+    with app.app_context():
+        try:
+            # Render the template
+            rendered_content = render_template(template_name)
+            
+            # Determine output file path
+            if route_path == '/':
+                output_path = os.path.join('output', 'index.html')
+            else:
+                output_path = os.path.join('output', route_path.lstrip('/'))
+            
+            # Create directory if it doesn't exist
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            
+            # Write the file
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(rendered_content)
+            
+            print(f"Page '{page_name}' generated successfully at {output_path}!")
+            
+        except Exception as e:
+            print(f"Error generating page '{page_name}': {str(e)}")
+            return
+
 def show_available_commands():
     """Show available generation commands"""
     print("\n" + "="*60)
@@ -440,12 +519,14 @@ def show_available_commands():
     print("2. generate_all_blog_pages()     - Generate all blog pages")
     print("3. generate_specific_blog_page('blog-ai-basics') - Generate specific blog page")
     print("4. generate_main_pages()         - Generate all main pages (non-blog)")
-    print("5. generate_whole_website()      - Generate complete website + sitemap")
-    print("6. generate_sitemap()            - Generate only sitemap.xml")
-    print("7. show_available_commands()     - Show this help")
+    print("5. generate_specific_page('cto-as-a-service') - Generate specific page")
+    print("6. generate_whole_website()      - Generate complete website + sitemap")
+    print("7. generate_sitemap()            - Generate only sitemap.xml")
+    print("8. show_available_commands()     - Show this help")
     print("\nExample usage:")
     print("  python -c \"from generate import generate_homepage; generate_homepage()\"")
     print("  python -c \"from generate import generate_specific_blog_page; generate_specific_blog_page('blog-ai-rag')\"")
+    print("  python -c \"from generate import generate_specific_page; generate_specific_page('cto-as-a-service')\"")
     print("  python -c \"from generate import generate_whole_website; generate_whole_website()\"")
     print("\nOr in Python shell:")
     print("  python")

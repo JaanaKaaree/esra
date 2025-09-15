@@ -25,6 +25,9 @@ python -c "from generate import generate_whole_website; generate_whole_website()
 ### Show help
 python -c "from generate import show_available_commands; show_available_commands()"
 
+### Specific page
+python -c "from generate import generate_specific_page; generate_specific_page('cto-as-a-service')"
+
 
 # Manual Deploy Changes 
 
